@@ -1,0 +1,3 @@
+# DEMO — nicht indexieren, bis Impressum + Datenschutz live & freigegeben sind.
+User-agent: *
+Disallow: /
