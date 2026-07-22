@@ -1,5 +1,21 @@
 # AENDERUNGEN — Madhu und Moon
 
+## 2026-07-22 · Drittes Foto für die Küchenimpressionen (Zucchini-Teller mit Frühlingsdeko)
+
+**Kundenwunsch (O-Ton):**
+> Dieses Bild bitte zu Küchenimpressionen hinzufügen
+
+**Datei:** `uploads/eingang/8cdba18f-7695-47da-9298-9b128b9d231d-mrut754b.jpg`
+(Original-Name laut Upload: `8cdba18f-7695-47da-9298-9b128b9d231d.jpeg` — Motiv: ayurvedisch angerichteter Teller in Hochformat — gefüllte Zucchini auf Süßkartoffelpüree mit heller Kräuter-/Tahini-Sauce, dazu Rote-Bete-Reis, Mango-Chutney und ein Schälchen Dal auf türkisem Keramik-Quadratteller; im Hintergrund ein rustikaler Holztopf mit Frühlingsblumen — Frühlings-/Retreat-Stimmung.)
+
+**Umgesetzt:**
+- Neues `<figure class="g-item">` in der Galerie-Sektion (`index.html`, Section `#galerie`), platziert zwischen `g-buffet.jpg` und `g-ernte.jpg` — passt motivisch zu den plated dishes / Food-Arrangements und ergänzt die Reihe um einen einzelnen, gut erkennbaren Signature-Teller.
+- Referenziert den Upload-Pfad direkt (`uploads/eingang/8cdba18f-…-mrut754b.jpg`). `loading="lazy"` + `decoding="async"` wie bei den anderen Galerie-Kacheln; Hochformat `480×640` analog zu den übrigen Portraits.
+- Alt-Text: „Ayurvedischer Teller mit gefüllter Zucchini auf Süßkartoffelpüree, dazu Rote-Bete-Reis, Mango-Chutney und Dal auf türkisem Keramikteller – dahinter Frühlingsblumen im Holztopf".
+
+**Offen — System:**
+- Asset später von `uploads/eingang/` nach `assets/` einsortieren (z. B. `assets/g-zucchini-teller.jpg`, Web-Kompression via `sips`) und die `src=`-Referenz mitziehen. In `_projekt/ASSETS-LIZENZEN.md` als 🟢 nachziehen (Herkunft Kundin, Freigabe 13.07.2026).
+
 ## 2026-07-22 · Zweites Foto für die Küchenimpressionen (Kuchen-Duo)
 
 **Kundenwunsch (O-Ton):**

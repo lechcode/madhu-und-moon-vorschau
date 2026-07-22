@@ -1,6 +1,6 @@
 # QA-Report: madhu-und-moon
 
-**Gesamtampel: 🟡 GELB** · 0 rot / 7 gelb / 8 grün · 22.07.2026 19:27 · Dauer 32 s · lc-qa.py
+**Gesamtampel: 🟡 GELB** · 0 rot / 7 gelb / 8 grün · 22.07.2026 19:31 · Dauer 33 s · lc-qa.py
 
 ## 5-Minuten-Abnahme (Mensch)
 1. Alle 🔴 unten abgearbeitet? 2. Screenshots in `qa-shots/` überflogen — „würde ich das verschicken?"
