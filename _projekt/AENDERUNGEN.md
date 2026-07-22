@@ -1,5 +1,21 @@
 # AENDERUNGEN — Madhu und Moon
 
+## 2026-07-22 · Viertes Foto für die Küchenimpressionen (Rote-Bete-Hummus, Lassi & Brot mit Namenskärtchen)
+
+**Kundenwunsch (O-Ton):**
+> Bitte zu Küchenimpressionen hinzufügen
+
+**Datei:** `uploads/eingang/img_5675-mrut8j9p.jpg`
+(Original-Name laut Upload: `IMG_5675.jpeg` — Motiv: kleine Ayurveda-Tafel von oben auf Holztisch: Rote-Bete-Hummus in einer Schale, dazu ein Glas mit hausgemachtem Lassi/Milchgetränk, ein Schälchen mit Kräuter-/Süßspeise auf gemustertem Untersetzer, frisches Brot und mehrere handgeschriebene Namenskärtchen auf Schiefertäfelchen; botanisch bedruckte Platzsets am Rand — Retreat-Serving-Detail.)
+
+**Umgesetzt:**
+- Neues `<figure class="g-item">` in der Galerie-Sektion (`index.html`, Section `#galerie`), platziert zwischen `g-aperitivo.jpg` und der Mezze-Kachel — passt motivisch zu den anderen Food-Arrangements/Buffet-Details und bildet eine natürliche Fortsetzung des „Angerichtet-auf-Holz"-Themas.
+- Referenziert den Upload-Pfad direkt (`uploads/eingang/img_5675-mrut8j9p.jpg`). `loading="lazy"` + `decoding="async"` wie bei den anderen Galerie-Kacheln; Landscape `800×600` (iPhone-Aufnahme im Querformat).
+- Alt-Text: „Kleine Ayurveda-Tafel mit Rote-Bete-Hummus, hausgemachtem Lassi und frischem Brot auf einem Holztisch, dazwischen handgeschriebene Namensschilder".
+
+**Offen — System:**
+- Asset später von `uploads/eingang/` nach `assets/` einsortieren (z. B. `assets/g-hummus-lassi.jpg`, Web-Kompression via `sips`) und die `src=`-Referenz mitziehen. In `_projekt/ASSETS-LIZENZEN.md` als 🟢 nachziehen (Herkunft Kundin, Freigabe 13.07.2026).
+
 ## 2026-07-22 · Drittes Foto für die Küchenimpressionen (Zucchini-Teller mit Frühlingsdeko)
 
 **Kundenwunsch (O-Ton):**
