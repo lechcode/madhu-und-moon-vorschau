@@ -1,5 +1,21 @@
 # AENDERUNGEN — Madhu und Moon
 
+## 2026-07-22 · Zweites Foto für die Küchenimpressionen (Kuchen-Duo)
+
+**Kundenwunsch (O-Ton):**
+> Dieses Foto bitte zu den Küchenimpressionen hinzufügen
+
+**Datei:** `uploads/eingang/img_5638-mrut4v9y.jpg`
+(Original-Name laut Upload: `IMG_5638.jpeg` — Motiv: zwei selbstgemachte Kuchen von oben, gehalten von Laura & Lucie — links Erdbeer-Sahne-Torte, rechts Schokoladen-Gugelhupf mit Kornblumenblüten auf weißem Teller. Landscape-Aufnahme.)
+
+**Umgesetzt:**
+- Neues `<figure class="g-item">` ans Ende der Galerie in `index.html` (Section `#galerie`, nach `g-dampf.jpg`) — bildet einen natürlichen „süßen Abschluss" der Impressionen.
+- Referenziert den Upload-Pfad direkt (`uploads/eingang/img_5638-mrut4v9y.jpg`). `loading="lazy"` + `decoding="async"` wie bei den anderen Galerie-Kacheln. Größe `800×600` (Landscape/4:3 wie iPhone-Foto).
+- Alt-Text: „Zwei selbstgemachte Kuchen von oben: eine Erdbeer-Sahne-Torte und ein Schokoladen-Gugelhupf mit Kornblumenblüten, von Laura und Lucie gehalten".
+
+**Offen — System:**
+- Asset später von `uploads/eingang/` nach `assets/` einsortieren (z. B. `assets/g-kuchen-duo.jpg`, Web-Kompression via `sips`) und die `src=`-Referenz mitziehen. In `_projekt/ASSETS-LIZENZEN.md` nachziehen (Herkunft Kundin, Freigabe-Datum ergänzen).
+
 ## 2026-07-22 · Neues Foto für die Küchenimpressionen
 
 **Kundenwunsch (O-Ton):**
