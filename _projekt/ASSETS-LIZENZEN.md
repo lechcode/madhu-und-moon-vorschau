@@ -24,6 +24,7 @@ Quelle: Sprach-Memo von Lucie (13.07.2026) mit Bildfreigabe für die Vorschau. W
 | `assets/g-duo-melone.jpg` | Beide mit Wassermelone | Kunde | 🟢 |
 | `assets/g-tafel-hoch.jpg` | Reich gedeckte Tafel von oben | Kunde | 🟢 |
 | `assets/g-dampf.jpg` | Dampfende Schüssel mit Basilikum | Kunde | 🟢 |
+| `uploads/eingang/cc710f1d-…-mrut3m0p.jpg` | Mezze-Auswahl mit Hummus, Kürbis-Aufstrich, Tabouleh (neu 22.07.) — wird vom System nach `assets/` einsortiert | Kunde | 🟢 |
 | `assets/og.jpg` | Social-Preview-Bild (aus Kundenmaterial) | Kunde | 🟢 |
 | `assets/hero-520.jpg` / `hero-820.jpg` | Alt-Hero (nicht mehr genutzt, s. AENDERUNGEN.md) | Kunde | 🟢 |
 

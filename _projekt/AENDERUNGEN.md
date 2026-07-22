@@ -1,5 +1,22 @@
 # AENDERUNGEN — Madhu und Moon
 
+## 2026-07-22 · Neues Foto für die Küchenimpressionen
+
+**Kundenwunsch (O-Ton):**
+> Dieses Foto bitte zu den Küchenimpressionen hinzufügen
+
+**Datei:** `uploads/eingang/cc710f1d-ad23-49ad-932d-510e5d72e5c4-mrut3m0p.jpg`
+(Original-Name laut Upload: `cc710f1d-ad23-49ad-932d-510e5d72e5c4.jpeg` — Motiv: Mezze-Auswahl mit Hummus, Kürbis-Aufstrich, Tabouleh, Kicherlinsen und Dip in bunten Schüsseln auf Holztisch, Hochformat.)
+
+**Umgesetzt:**
+- Neues `<figure class="g-item">` in der Galerie-Sektion (`index.html`, Section `#galerie`), platziert zwischen `g-aperitivo.jpg` und `g-buffet.jpg` — passt motivisch (Food-Arrangements/Schüsseln).
+- Referenziert den Upload-Pfad direkt (`uploads/eingang/…`). `loading="lazy"` + `decoding="async"` wie bei den anderen Galerie-Kacheln; Hochformat `480×640` analog zu den übrigen Portraits.
+- Alt-Text: „Ayurvedische Mezze-Auswahl mit Hummus, Kürbis-Aufstrich, Tabouleh und Beilagen in bunten Schüsseln auf Holztisch".
+- In `_projekt/ASSETS-LIZENZEN.md` als 🟢 nachgezogen (Herkunft Kundin, Freigabe 13.07.2026).
+
+**Offen — System:**
+- Asset später von `uploads/eingang/` nach `assets/` einsortieren (Umbenennung z. B. `assets/g-mezze.jpg`, Web-Kompression via `sips`) und die `src=`-Referenz mitziehen. Das erledigt das System (kein Bash von mir).
+
 ## 2026-07-22 · Text- & Bildwünsche von Lucie
 
 **Kundenwunsch (O-Ton, gekürzt):**
