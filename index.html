@@ -181,20 +181,22 @@
   /* ================================================================
      4 · HERO / HEADER — großes Logo + Claim + Foto (zentriert)
      ================================================================ */
-  .hero{position:relative;padding-top:calc(var(--nav-h) + var(--space-5));padding-bottom:var(--space-6);
-    text-align:center;overflow:hidden}
-  .hero-inner{display:flex;flex-direction:column;align-items:center;gap:var(--space-3)}
-  .hero .eyebrow{margin-bottom:2px}
+  .hero{position:relative;padding-top:calc(var(--nav-h) + var(--space-5));padding-bottom:var(--space-6);overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,64px);align-items:center}
+  .hero-copy{text-align:left}
+  .hero .eyebrow{margin-bottom:var(--space-2)}
   .hero h1{font-family:var(--serif);font-weight:400;font-size:var(--step-4);line-height:1.1;
-    letter-spacing:var(--ls-display);color:var(--ink);max-width:16ch}
+    letter-spacing:var(--ls-display);color:var(--ink);max-width:14ch;margin-bottom:var(--space-3)}
   .hero h1 em{font-style:italic;color:var(--clay)}
-  .hero .lead{max-width:58ch;margin-inline:auto;font-size:var(--step-1)}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;margin-top:var(--space-2)}
-  .hero-photo{width:100%;max-width:1100px;margin-top:var(--space-4);border-radius:var(--radius-lg);
-    overflow:hidden;border:1px solid var(--line);box-shadow:0 34px 74px -30px rgba(45,58,64,.42)}
+  .hero .lead{max-width:46ch;font-size:var(--step-1);margin-bottom:var(--space-4)}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .hero-photo{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);
+    box-shadow:0 30px 64px -30px rgba(45,58,64,.42)}
   .hero-photo img{width:100%;height:auto;display:block}
   @media (max-width:860px){
     .hero{padding-top:calc(var(--nav-h) + var(--space-4))}
+    .hero-grid{grid-template-columns:1fr;gap:var(--space-4)}
+    .hero-photo{max-width:560px}
   }
 
   /* ================================================================
@@ -434,23 +436,27 @@
 
     <!-- ============================ HERO ============================ -->
     <section class="hero" aria-labelledby="hero-h1">
-      <div class="wrap hero-inner">
-        <p class="eyebrow">Ayurvedische Retreat-Küche</p>
-        <h1 id="hero-h1">Die <em>Alchemie</em> des Kochens</h1>
-        <p class="lead">Wir sind Laura &amp; Lucie. Wir kochen ayurvedisch – jede Zutat, jedes Gewürz bewusst gewählt, achtsam zubereitet und liebevoll serviert. Für Retreats, Events und Workshops.</p>
-        <div class="hero-cta">
-          <a href="#kontakt" class="btn btn-primary">Anfragen
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a href="#angebot" class="btn btn-ghost">Unser Angebot</a>
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Ayurvedische Retreat-Küche</p>
+            <h1 id="hero-h1">Die <em>Alchemie</em> des Kochens</h1>
+            <p class="lead">Wir sind Laura &amp; Lucie. Wir kochen ayurvedisch – jede Zutat, jedes Gewürz bewusst gewählt, achtsam zubereitet und liebevoll serviert. Für Retreats, Events und Workshops.</p>
+            <div class="hero-cta">
+              <a href="#kontakt" class="btn btn-primary">Anfragen
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a href="#angebot" class="btn btn-ghost">Unser Angebot</a>
+            </div>
+          </div>
+          <figure class="hero-photo">
+            <img src="assets/hero-duo-800.jpg"
+                 srcset="assets/hero-duo-800.jpg 800w, assets/hero-duo-1300.jpg 1300w"
+                 sizes="(max-width:860px) 90vw, 520px"
+                 width="1300" height="867" fetchpriority="high" decoding="async"
+                 alt="Laura und Lucie vor einer üppig gedeckten Tafel mit vielen ayurvedischen Gerichten">
+          </figure>
         </div>
-        <figure class="hero-photo">
-          <img src="assets/hero-duo-1300.jpg"
-               srcset="assets/hero-duo-800.jpg 800w, assets/hero-duo-1300.jpg 1300w"
-               sizes="(max-width:900px) 92vw, 1100px"
-               width="1300" height="867" fetchpriority="high" decoding="async"
-               alt="Laura und Lucie vor einer üppig gedeckten Tafel mit vielen ayurvedischen Gerichten">
-        </figure>
       </div>
     </section>
 
