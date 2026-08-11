@@ -33,15 +33,15 @@
   <meta property="og:image" content="https://lechcode.github.io/madhu-und-moon-vorschau/assets/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta name="theme-color" content="#F7F3EC" />
-  <!-- Favicon: Mond-Sichel über einem Blatt (Inline-SVG-Data-URI, kein externer Request) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23F7F3EC'/%3E%3Cpath d='M19 6.5a6.5 6.5 0 1 0 4.2 8.2A5.4 5.4 0 0 1 19 6.5z' fill='%23566E77'/%3E%3Cpath d='M13 25v-7c-3 0-4.6-1.7-4.8-5 2.9.2 4.6 1.8 4.8 4.8.2-3 1.9-4.6 4.8-4.8-.2 3.3-1.8 5-4.8 5' fill='%239E6B52'/%3E%3C/svg%3E" />
+  <meta name="theme-color" content="#F7F4EC" />
+  <link rel="icon" href="assets/favicon-64.png" />
+  <link rel="apple-touch-icon" href="assets/monogramm-180.png" />
   <!-- Schriften lokal gehostet (DSGVO: keine Verbindung zu Google) -->
   <link rel="stylesheet" href="assets/fonts.css">
-  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-serif-400.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/karla-regular.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cormorant-300.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cormorant-400.woff2" crossorigin>
   <!-- Hero-Foto vorladen (LCP) -->
-  <link rel="preload" as="image" href="assets/g-catering-duo.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero-duo-800.jpg" imagesrcset="assets/hero-duo-800.jpg 800w, assets/hero-duo-1300.jpg 1300w" imagesizes="(max-width:900px) 92vw, 1100px" fetchpriority="high">
 
   <!-- JSON-LD: nur belegbare, sichtbare Angaben. Adresse/Telefon/Preis offen (unbestätigt). -->
   <script type="application/ld+json">
@@ -64,34 +64,34 @@
         · gedeckte Erde (CTA) · weicher Schiefer (dunkle Flächen)
      ================================================================ */
   :root{
-    --paper:#F7F3EC; --cream:#EEE7DA; --cream-2:#E4DBCB; --white:#FCFAF5;
-    --ink:#3B352C;            /* Headlines — weiches Taupe-Braun */
-    --text:#544B3F;          /* Fließtext */
-    --text-soft:#6B6154;     /* Sekundär (AA auf Creme geprüft) */
-    --clay:#8E5D45; --clay-deep:#6F4A33; --clay-soft:#E6D8CE;   /* gedeckte Erde – CTA & warmer Akzent, sparsam (AA-Button) */
-    --mist:#9DB4BC; --mist-soft:#DCE5E7; --mist-deep:#4E656E;   /* fließendes Hellblau – Eyebrow/Atmosphäre (deep = AA-Text) */
-    --slate:#303A3D; --slate-deep:#26302F;   /* dunkle, ruhige Flächen (Wasser/Abend) */
-    --bone:#ECE6DA; --bone-dim:#BDB6A8;       /* Text auf dunkel */
+    --paper:#F7F4EC; --cream:#E7E4D8; --cream-2:#DCD8CA; --white:#FCFAF4;
+    --ink:#3D4E56;            /* Headlines — Ink Blaugrau */
+    --text:#4A575C;          /* Fließtext (Body) */
+    --text-soft:#6F7A7E;     /* Sekundär / Muted */
+    --clay:#BC7A50; --clay-deep:#9E6540; --clay-soft:#EEDCCB; --clay-bright:#DB9A6D;  /* Terrakotta-Akzent (bright = auf dunkel) */
+    --mist:#7D939B; --mist-soft:#D7DFE1; --mist-deep:#566A72;   /* Rauchblau – sekundär / Eyebrow (deep = AA-Text) */
+    --slate:#35454C; --slate-deep:#2C3A40;   /* dunkle, ruhige Flächen */
+    --bone:#ECE7DB; --bone-dim:#AEB6B7;       /* Text auf dunkel */
 
-    --line:rgba(59,53,44,.13); --line-2:rgba(59,53,44,.20);
-    --line-d:rgba(236,230,218,.16);
+    --line:#D8D5C9; --line-2:rgba(61,78,86,.20);
+    --line-d:rgba(236,231,219,.16);
 
-    --serif:"Instrument Serif","Instrument Serif Fallback",Georgia,"Times New Roman",serif;
+    --serif:"Cormorant","Cormorant Fallback",Georgia,"Times New Roman",serif;
     --sans:"Karla","Karla Fallback",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
 
     --radius:16px; --radius-lg:24px; --radius-sm:10px; --pill:999px;
     --nav-h:68px;
 
-    --step--1:clamp(13px, 0.3vw + 12.2px, 14px);
-    --step-0:clamp(16px, 0.4vw + 15px, 17px);
-    --step-1:clamp(18px, 0.6vw + 16.4px, 20px);
-    --step-2:clamp(22px, 1.4vw + 18px, 28px);
-    --step-3:clamp(28px, 3vw + 20px, 44px);
-    --step-4:clamp(38px, 6vw + 18px, 74px);
-    --step-5:clamp(46px, 8vw + 16px, 104px);
+    --step--1:clamp(12px, 0.2vw + 11.4px, 13px);
+    --step-0:clamp(17px, 0.3vw + 16px, 18px);
+    --step-1:clamp(19px, 0.4vw + 17.6px, 21px);
+    --step-2:clamp(22px, 1.2vw + 18.5px, 27px);
+    --step-3:clamp(30px, 3vw + 21px, 44px);
+    --step-4:clamp(40px, 5.5vw + 20px, 68px);
+    --step-5:clamp(46px, 8vw + 16px, 100px);
 
-    --lh-tight:1.04; --lh-snug:1.14; --lh-body:1.7; --lh-relaxed:1.85;
-    --ls-display:.004em; --ls-label:.24em;
+    --lh-tight:1.06; --lh-snug:1.16; --lh-body:1.7; --lh-relaxed:1.8;
+    --ls-display:.02em; --ls-label:.4em;
 
     --space-2:clamp(14px, 1.6vw, 18px);
     --space-3:clamp(20px, 2.4vw, 26px);
@@ -110,7 +110,7 @@
   html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   body{
-    font-family:var(--sans);font-size:var(--step-0);line-height:var(--lh-body);
+    font-family:var(--serif);font-size:var(--step-0);line-height:var(--lh-body);
     color:var(--text);background:var(--paper);
     -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
     overflow-x:clip;
@@ -126,16 +126,16 @@
   .narrow{max-width:var(--wrap-narrow)}
   section{padding-block:var(--space-6)}
 
-  .eyebrow{font-family:var(--sans);font-weight:700;font-size:var(--step--1);
+  .eyebrow{font-family:var(--serif);font-weight:500;font-size:var(--step--1);
     letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--mist-deep)}
   .lead{font-size:var(--step-1);color:var(--text);line-height:var(--lh-relaxed);max-width:54ch}
 
   .skip{position:absolute;left:16px;top:-60px;z-index:200;background:var(--ink);color:var(--paper);
-    padding:12px 18px;border-radius:var(--radius-sm);font-weight:700;transition:top .2s var(--ease)}
+    padding:12px 18px;border-radius:var(--radius-sm);font-weight:500;transition:top .2s var(--ease)}
   .skip:focus{top:14px}
 
   /* Buttons */
-  .btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--sans);font-weight:700;
+  .btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--serif);font-weight:500;
     font-size:var(--step-0);padding:.92em 1.5em;border-radius:var(--pill);cursor:pointer;
     border:1.5px solid transparent;transition:transform .25s var(--ease),background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);line-height:1}
   .btn-primary{background:var(--clay);color:var(--paper)}
@@ -155,7 +155,7 @@
   .brand{font-family:var(--serif);font-size:clamp(22px,2.4vw,27px);color:var(--ink);line-height:1;letter-spacing:.01em}
   .brand em{font-style:italic;color:var(--mist-deep)}
   .nav-links{display:flex;align-items:center;gap:clamp(18px,2.4vw,34px)}
-  .nav-links a:not(.btn){font-weight:700;font-size:var(--step--1);letter-spacing:.04em;color:var(--text);position:relative}
+  .nav-links a:not(.btn){font-weight:500;font-size:var(--step--1);letter-spacing:.04em;color:var(--text);position:relative}
   .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1.5px;
     background:var(--mist-deep);transition:width .25s var(--ease)}
   .nav-links a:not(.btn):hover::after{width:100%}
@@ -173,39 +173,27 @@
     opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s}
   .m-menu.open{opacity:1;visibility:visible;transform:none}
   .m-menu a{font-family:var(--serif);font-size:var(--step-3);color:var(--ink);padding:.25em 0;border-bottom:1px solid var(--line)}
-  .m-menu .btn{margin-top:1.4rem;justify-content:center;font-family:var(--sans)}
+  .m-menu .btn{margin-top:1.4rem;justify-content:center;font-family:var(--serif)}
   .m-close{position:absolute;top:16px;right:clamp(16px,5vw,40px);background:none;border:0;cursor:pointer;color:var(--ink);width:44px;height:44px}
   .m-close svg{width:28px;height:28px}
 
   /* ================================================================
-     4 · HERO — Split (Text + gerahmtes Foto), sanft
+     4 · HERO / HEADER — großes Logo + Claim + Foto (zentriert)
      ================================================================ */
-  .hero{position:relative;min-height:100svh;display:flex;align-items:center;
-    padding-top:calc(var(--nav-h) + var(--space-4));padding-bottom:var(--space-5);overflow:hidden}
-  .hero .wrap{position:relative;z-index:2}
-  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(30px,5vw,68px);align-items:center}
-  .hero-eyebrow{display:inline-flex;align-items:center;gap:.7em;margin-bottom:var(--space-3)}
-  .hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--mist)}
-  .hero h1{font-size:clamp(40px, 4.4vw + 22px, 78px);line-height:var(--lh-tight);max-width:12ch;margin-bottom:var(--space-3)}
-  .hero h1 em{font-style:italic;color:var(--mist-deep)}
-  .hero .lead{margin-bottom:var(--space-4)}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-  .hero-figure{position:relative}
-  .hero-figure .frame{position:relative;aspect-ratio:4/5;border-radius:var(--radius-lg);overflow:hidden;
-    border:1px solid var(--line);box-shadow:0 34px 70px -26px rgba(59,53,44,.4)}
-  .hero-figure img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
-  .hero-figure .frame::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,transparent 60%,rgba(38,48,47,.18));pointer-events:none}
-  .hero-glow{position:absolute;border-radius:50%;filter:blur(74px);z-index:0;pointer-events:none}
-  .hero-glow.a{width:52vw;height:52vw;max-width:660px;max-height:660px;top:-16%;right:-8%;
-    background:radial-gradient(circle,rgba(157,180,188,.30),transparent 68%)}
-  .hero-glow.b{width:42vw;height:42vw;max-width:500px;max-height:500px;bottom:-18%;left:-12%;
-    background:radial-gradient(circle,rgba(158,107,82,.12),transparent 70%)}
+  .hero{position:relative;padding-top:calc(var(--nav-h) + var(--space-5));padding-bottom:var(--space-6);
+    text-align:center;overflow:hidden}
+  .hero-inner{display:flex;flex-direction:column;align-items:center;gap:var(--space-4)}
+  .hero-logo{width:min(560px,88%);height:auto;margin-inline:auto}
+  .hero h1{font-family:var(--serif);font-weight:300;font-size:var(--step-4);line-height:1.08;
+    letter-spacing:var(--ls-display);color:var(--ink);max-width:18ch}
+  .hero h1 em{font-style:italic;color:var(--clay)}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center}
+  .hero-photo{width:100%;max-width:1100px;margin-top:var(--space-2);border-radius:var(--radius-lg);
+    overflow:hidden;border:1px solid var(--line);box-shadow:0 34px 74px -30px rgba(45,58,64,.42)}
+  .hero-photo img{width:100%;height:auto;display:block}
   @media (max-width:860px){
-    .hero{align-items:flex-start;padding-top:calc(var(--nav-h) + var(--space-5))}
-    .hero-grid{grid-template-columns:1fr;gap:var(--space-4)}
-    .hero-figure{max-width:340px;width:100%;margin-inline:auto;order:2}
-    .hero h1{max-width:100%}
+    .hero{padding-top:calc(var(--nav-h) + var(--space-4))}
+    .hero-logo{width:min(440px,90%)}
   }
 
   /* ================================================================
@@ -234,7 +222,7 @@
   .card .ic{width:40px;height:40px;color:var(--mist-deep);margin-bottom:.3rem}
   .card h3{font-size:var(--step-2)}
   .card p{color:var(--text-soft);font-size:var(--step-0)}
-  .card .tag{margin-top:auto;font-family:var(--sans);font-weight:700;font-size:var(--step--1);
+  .card .tag{margin-top:auto;font-family:var(--serif);font-weight:500;font-size:var(--step--1);
     letter-spacing:.12em;text-transform:uppercase;color:var(--clay-deep)}
   @media (max-width:820px){.cards{grid-template-columns:1fr;max-width:460px}}
 
@@ -267,7 +255,7 @@
   .person .avatar{width:70px;height:70px;border-radius:50%;background:linear-gradient(150deg,var(--mist-soft),var(--clay-soft));
     display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:30px;color:var(--mist-deep)}
   .person h3{font-size:var(--step-2)}
-  .person .role{font-family:var(--sans);font-weight:700;font-size:var(--step--1);letter-spacing:.1em;text-transform:uppercase;color:var(--clay-deep)}
+  .person .role{font-family:var(--serif);font-weight:500;font-size:var(--step--1);letter-spacing:.1em;text-transform:uppercase;color:var(--clay-deep)}
   .person p{color:var(--text-soft)}
   @media (max-width:680px){.duo{grid-template-columns:1fr;max-width:420px;margin-inline:auto}}
 
@@ -294,7 +282,7 @@
     color:var(--mist-deep);display:block;margin-bottom:.4rem}
   .step h3{font-size:var(--step-2);margin-bottom:.4rem}
   .step p{color:var(--text-soft)}
-  .step .dur{font-size:var(--step--1);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--clay-deep);margin-top:.5rem;display:block}
+  .step .dur{font-size:var(--step--1);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--clay-deep);margin-top:.5rem;display:block}
   @media (max-width:760px){.steps-grid{grid-template-columns:1fr;max-width:440px}}
 
   /* ================================================================
@@ -312,8 +300,8 @@
     font-size:var(--step--1);color:var(--bone-dim);line-height:1.55}
   form{display:grid;gap:1rem}
   .field{display:grid;gap:.4rem}
-  label{font-weight:700;font-size:var(--step--1);letter-spacing:.05em;color:var(--bone)}
-  input,select,textarea{font-family:var(--sans);font-size:var(--step-0);color:var(--paper);
+  label{font-weight:500;font-size:var(--step--1);letter-spacing:.05em;color:var(--bone)}
+  input,select,textarea{font-family:var(--serif);font-size:var(--step-0);color:var(--paper);
     background:rgba(247,243,236,.06);border:1px solid var(--line-d);border-radius:var(--radius-sm);
     padding:.8em .9em;width:100%}
   input::placeholder,textarea::placeholder{color:var(--bone-dim)}
@@ -380,7 +368,7 @@
     padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:1rem}
   .quote .mark{font-family:var(--serif);font-size:2.6rem;line-height:.5;color:var(--mist);height:1.1rem}
   .quote p{font-size:var(--step-1);line-height:1.6;color:var(--text)}
-  .quote .who{margin-top:auto;font-size:var(--step--1);font-weight:700;letter-spacing:.05em;color:var(--mist-deep);text-transform:uppercase}
+  .quote .who{margin-top:auto;font-size:var(--step--1);font-weight:500;letter-spacing:.05em;color:var(--mist-deep);text-transform:uppercase}
   .quote.placeholder{border-style:dashed;background:transparent}
   .quote.placeholder p{color:var(--text-soft);font-style:italic}
   @media (max-width:820px){.quotes{grid-template-columns:1fr;max-width:480px;margin-inline:auto}}
@@ -445,30 +433,22 @@
 
     <!-- ============================ HERO ============================ -->
     <section class="hero" aria-labelledby="hero-h1">
-      <div class="hero-glow a"></div>
-      <div class="hero-glow b"></div>
-      <div class="wrap">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="hero-eyebrow eyebrow"><span class="dot"></span> Ayurvedische Retreat-Küche</p>
-            <h1 id="hero-h1">Die <em>Alchemie</em> des Kochens.</h1>
-            <p class="lead">Wir sind Laura &amp; Lucie. Wir kochen ayurvedisch – jede Zutat, jedes Gewürz bewusst gewählt, achtsam zubereitet und liebevoll serviert. Für Retreats, Events und Workshops.</p>
-            <div class="hero-cta">
-              <a href="#kontakt" class="btn btn-primary">Anfrage schicken
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-              <a href="#kueche" class="btn btn-ghost">Unsere Küche</a>
-            </div>
-          </div>
-          <figure class="hero-figure">
-            <div class="frame">
-              <img src="assets/g-catering-duo.jpg"
-                   width="900" height="1200" fetchpriority="high" decoding="async"
-                   style="object-position:50% 45%"
-                   alt="Laura und Lucie sehen sich lächelnd an, im Hintergrund ein festlich gedecktes Fingerfood-Buffet">
-            </div>
-          </figure>
+      <div class="wrap hero-inner">
+        <img class="hero-logo" src="assets/header-logo.png" width="1240" height="620" decoding="async" alt="Madhu &amp; Moon – Ayurvedische Küche">
+        <h1 id="hero-h1">Die <em>Alchemie</em> des Kochens</h1>
+        <div class="hero-cta">
+          <a href="#kontakt" class="btn btn-primary">Anfragen
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#angebot" class="btn btn-ghost">Unser Angebot</a>
         </div>
+        <figure class="hero-photo">
+          <img src="assets/hero-duo-1300.jpg"
+               srcset="assets/hero-duo-800.jpg 800w, assets/hero-duo-1300.jpg 1300w"
+               sizes="(max-width:900px) 92vw, 1100px"
+               width="1300" height="867" fetchpriority="high" decoding="async"
+               alt="Laura und Lucie vor einer üppig gedeckten Tafel mit vielen ayurvedischen Gerichten">
+        </figure>
       </div>
     </section>
 

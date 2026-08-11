@@ -4,28 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Nicht gefunden | Madhu und Moon</title>
+  <title>Nicht gefunden | Madhu &amp; Moon</title>
+  <link rel="icon" href="assets/favicon-64.png" />
   <link rel="stylesheet" href="assets/fonts.css">
   <style>
-    :root{--paper:#F7F3EC;--ink:#3B352C;--text:#544B3F;--text-soft:#6B6154;--clay:#8E5D45;--honey:#4E656E;
-      --serif:"Instrument Serif",Georgia,serif;--sans:"Karla",Arial,sans-serif}
+    :root{--paper:#F7F4EC;--ink:#3D4E56;--body:#4A575C;--muted:#6F7A7E;--accent:#BC7A50;
+      --serif:"Cormorant","Cormorant Fallback",Georgia,serif}
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:var(--sans);background:var(--paper);color:var(--text);min-height:100svh;
+    body{font-family:var(--serif);font-weight:400;background:var(--paper);color:var(--body);min-height:100svh;
       display:flex;align-items:center;justify-content:center;text-align:center;padding:32px}
-    .brand{font-family:var(--serif);font-size:24px;color:var(--ink);margin-bottom:28px}
-    .brand em{font-style:italic;color:var(--honey)}
-    h1{font-family:var(--serif);font-weight:400;color:var(--ink);font-size:clamp(56px,16vw,120px);line-height:1}
-    p{color:var(--text-soft);margin:14px auto 26px;max-width:34ch;font-size:18px}
-    a{display:inline-block;background:var(--clay);color:var(--paper);text-decoration:none;font-weight:700;
-      padding:14px 26px;border-radius:999px}
+    .brand{font-family:var(--serif);font-weight:300;font-size:1.6rem;color:var(--ink);letter-spacing:.03em;margin-bottom:28px;display:block}
+    .brand em{font-style:italic;color:var(--accent)}
+    h1{font-family:var(--serif);font-weight:300;color:var(--ink);font-size:clamp(3.5rem,13vw,7rem);line-height:1;letter-spacing:.03em}
+    p{color:var(--muted);margin:16px auto 28px;max-width:40ch;font-size:1.125rem}
+    a.btn{display:inline-block;background:var(--accent);color:var(--paper);text-decoration:none;
+      font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:14px 26px}
   </style>
 </head>
 <body>
   <div>
-    <div class="brand">Madhu <em>und</em> Moon</div>
+    <span class="brand">Madhu <em>&amp;</em> Moon</span>
     <h1>404</h1>
     <p>Diese Seite ist wohl noch im Ofen. Hier gibt es leider nichts zu servieren.</p>
-    <a href="index.html">Zurück zur Startseite</a>
+    <a class="btn" href="index.html">Zurück zur Startseite</a>
   </div>
 </body>
 </html>
