@@ -80,7 +80,7 @@
     --sans:"Karla","Karla Fallback",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
 
     --radius:16px; --radius-lg:24px; --radius-sm:10px; --pill:999px;
-    --nav-h:76px;
+    --nav-h:104px;
 
     --step--1:clamp(13px, 0.2vw + 12.2px, 14px);
     --step-0:clamp(18px, 0.35vw + 17px, 20px);
@@ -152,7 +152,7 @@
   .nav.scrolled{box-shadow:0 6px 22px rgba(45,58,64,.08)}
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
   .brand{display:flex;align-items:center;line-height:0}
-  .brand img{height:42px;width:auto;display:block}
+  .brand img{height:68px;width:auto;display:block}
   .nav-links{display:flex;align-items:center;gap:clamp(18px,2.4vw,34px)}
   .nav-links a:not(.btn){font-weight:500;font-size:.9375rem;letter-spacing:.05em;color:var(--ink);position:relative}
   .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1.5px;
@@ -163,9 +163,10 @@
     align-items:center;justify-content:center;color:var(--ink)}
   .burger svg{width:26px;height:26px}
   @media (max-width:760px){
+    :root{--nav-h:84px}
     .nav-links{display:none}
     .burger{display:flex}
-    .brand img{height:34px}
+    .brand img{height:52px}
   }
 
   .m-menu{position:fixed;inset:0;z-index:99;background:var(--cream);
@@ -403,7 +404,7 @@
   <!-- ============================ NAV ============================ -->
   <header class="nav" id="nav">
     <div class="wrap">
-      <a class="brand" href="#top" aria-label="Madhu &amp; Moon – Startseite"><img src="assets/nav-logo.png" width="720" height="135" alt="Madhu &amp; Moon"></a>
+      <a class="brand" href="#top" aria-label="Madhu &amp; Moon – Startseite"><img src="assets/nav-logo.png" width="900" height="286" alt="Madhu &amp; Moon – Ayurvedische Küche"></a>
       <nav class="nav-links" aria-label="Hauptnavigation">
         <a href="#angebot">Angebot</a>
         <a href="#kueche">Küche</a>
