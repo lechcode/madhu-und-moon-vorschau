@@ -347,6 +347,45 @@
   .footer-bottom .lech svg{width:36px;height:8px;color:var(--mist);opacity:.7}
 
   /* ================================================================
+     12b · IMPRESSIONEN-SLIDER (in „Unsere Küche")
+     ================================================================ */
+  .impressions{margin-top:var(--space-6)}
+  .impressions .imp-head{max-width:60ch;margin-bottom:var(--space-4)}
+  .impressions .imp-head h3{font-size:var(--step-3);margin-top:var(--space-2)}
+  .impressions .imp-head p{color:var(--text-soft);margin-top:.4rem}
+  .slider{position:relative;overflow:hidden}
+  .slider-track{display:flex;gap:clamp(12px,1.4vw,18px);transition:transform .45s var(--ease);will-change:transform}
+  .slide{flex:0 0 auto;height:clamp(300px,52vh,520px);border-radius:var(--radius-lg);overflow:hidden;background:var(--cream-2)}
+  .slide img{height:100%;width:auto;max-width:none;display:block;object-fit:cover}
+  @media (prefers-reduced-motion:reduce){.slider-track{transition:none}}
+  .slider-nav{display:flex;gap:.7rem;margin-top:var(--space-3);align-items:center}
+  .slider-hint{margin-right:auto;font-size:var(--step--1);color:var(--text-soft);letter-spacing:.02em}
+  .slider-btn{width:50px;height:50px;border-radius:var(--pill);border:1px solid var(--line-2);
+    background:var(--white);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:background .25s var(--ease),border-color .25s var(--ease),opacity .25s var(--ease)}
+  .slider-btn:hover{background:var(--cream);border-color:var(--ink)}
+  .slider-btn:disabled{opacity:.35;cursor:default}
+  .slider-btn svg{width:22px;height:22px}
+  @media (prefers-reduced-motion:reduce){.slider-track{scroll-behavior:auto}}
+
+  /* ================================================================
+     12c · FEEDBACK / Stimmen
+     ================================================================ */
+  .feedback{background:var(--cream)}
+  .feedback .sec-head{text-align:center;max-width:60ch;margin-inline:auto}
+  .feedback .sec-head h2{font-size:var(--step-3);margin:var(--space-2) 0}
+  .feedback .sec-head p{color:var(--text-soft);margin-inline:auto}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.2vw,26px);margin-top:var(--space-5)}
+  .quote{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);
+    padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:1rem}
+  .quote .mark{font-family:var(--serif);font-size:2.6rem;line-height:.5;color:var(--mist);height:1.1rem}
+  .quote p{font-size:var(--step-1);line-height:1.6;color:var(--text)}
+  .quote .who{margin-top:auto;font-size:var(--step--1);font-weight:700;letter-spacing:.05em;color:var(--mist-deep);text-transform:uppercase}
+  .quote.placeholder{border-style:dashed;background:transparent}
+  .quote.placeholder p{color:var(--text-soft);font-style:italic}
+  @media (max-width:820px){.quotes{grid-template-columns:1fr;max-width:480px;margin-inline:auto}}
+
+  /* ================================================================
      13 · REVEALS
      ================================================================ */
   .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
@@ -381,7 +420,7 @@
         <a href="#angebot">Angebot</a>
         <a href="#kueche">Küche</a>
         <a href="#ueber">Wir</a>
-        <a href="#galerie">Impressionen</a>
+        <a href="#feedback">Feedback</a>
         <a href="#kontakt" class="btn btn-primary">Anfragen</a>
       </nav>
       <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="m-menu">
@@ -397,7 +436,7 @@
     <a href="#angebot">Angebot</a>
     <a href="#kueche">Unsere Küche</a>
     <a href="#ueber">Laura &amp; Lucie</a>
-    <a href="#galerie">Impressionen</a>
+    <a href="#feedback">Feedback</a>
     <a href="#kontakt" class="btn btn-primary">Anfrage schicken</a>
   </div>
 
@@ -492,6 +531,41 @@
                  alt="Üppige ayurvedische Tafel mit vielen bunten Schüsseln, von oben fotografiert, im warmen Abendlicht">
           </figure>
         </div>
+
+        <!-- Impressionen als Slider -->
+        <div class="impressions reveal" aria-labelledby="imp-h3">
+          <div class="imp-head">
+            <p class="eyebrow">Impressionen</p>
+            <h3 id="imp-h3">Aus unserer Küche &amp; vergangenen Projekten.</h3>
+            <p>Ein paar Eindrücke davon, wie es aussieht, wenn wir kochen – Tafeln, Teller und Momente dazwischen.</p>
+          </div>
+          <div class="slider">
+            <div class="slider-track" id="slider-track" tabindex="0" role="region" aria-label="Bildergalerie – zum Blättern wischen oder Pfeiltasten nutzen">
+              <figure class="slide"><img src="assets/g-aperitivo.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Liebevoll angerichteter Aperitivo-Teller mit Focaccia, Antipasti und frischen Broten auf einer Leinentafel"></figure>
+              <figure class="slide"><img src="assets/g-zucchini-teller.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Ayurvedischer Teller mit gefüllter Zucchini auf Süßkartoffelpüree, Rote-Bete-Reis, Mango-Chutney und Dal"></figure>
+              <figure class="slide"><img src="assets/g-mezze.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Ayurvedische Mezze-Auswahl mit Hummus, Kürbis-Aufstrich, Tabouleh und Beilagen in bunten Schüsseln"></figure>
+              <figure class="slide"><img src="assets/g-tafel-namensschilder.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Kleine Ayurveda-Tafel mit Rote-Bete-Hummus, Lassi und frischem Brot, dazwischen handgeschriebene Namensschilder"></figure>
+              <figure class="slide"><img src="assets/g-duo-spread.jpg" width="760" height="570" loading="lazy" decoding="async" alt="Laura und Lucie hinter einer üppig gedeckten Tafel voller Speisen"></figure>
+              <figure class="slide"><img src="assets/g-gewuerze.jpg" width="928" height="1300" loading="lazy" decoding="async" alt="Gewürzdose voller bunter Ayurveda-Gewürze auf einem Holzbrett"></figure>
+              <figure class="slide"><img src="assets/g-kochen.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Die beiden beim Kochen in der offenen Holzküche"></figure>
+              <figure class="slide"><img src="assets/g-ernte.jpg" width="975" height="1300" loading="lazy" decoding="async" alt="Ernte von frischem Gemüse und Kräutern im Gewächshaus für das Retreat-Menü"></figure>
+              <figure class="slide"><img src="assets/g-buffet.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Ayurvedisches Buffet mit vielen bunten Schüsseln im warmen Abendlicht"></figure>
+              <figure class="slide"><img src="assets/g-kuchen-duo.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Zwei selbstgemachte Kuchen von oben: Erdbeer-Sahne-Torte und Schokoladen-Gugelhupf mit Kornblumen"></figure>
+              <figure class="slide"><img src="assets/g-tafel-hoch.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Reich gedeckte Tafel von oben, mit Laura und Lucie dahinter"></figure>
+              <figure class="slide"><img src="assets/g-duo-melone.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Laura und Lucie in ihrer pflanzenreichen Küche mit frischen Zutaten und Wassermelone"></figure>
+              <figure class="slide"><img src="assets/g-dampf.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Dampfende Schüssel beim Kochen, Basilikum im Vordergrund"></figure>
+            </div>
+            <div class="slider-nav">
+              <span class="slider-hint">Wischen oder blättern →</span>
+              <button class="slider-btn" id="slider-prev" type="button" aria-label="Vorheriges Bild" aria-controls="slider-track">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button class="slider-btn" id="slider-next" type="button" aria-label="Nächstes Bild" aria-controls="slider-track">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -526,56 +600,32 @@
       </div>
     </section>
 
-    <!-- ============================ GALERIE ============================ -->
-    <section id="galerie" class="gallery" aria-labelledby="galerie-h2">
+    <!-- ============================ FEEDBACK ============================ -->
+    <section id="feedback" class="feedback" aria-labelledby="feedback-h2">
       <div class="wrap">
         <div class="sec-head reveal">
-          <p class="eyebrow">Impressionen</p>
-          <h2 id="galerie-h2">Aus unserer Küche &amp; vergangenen Projekten.</h2>
-          <p>Ein paar Eindrücke davon, wie es aussieht, wenn wir kochen. <!-- HIER: weitere/andere Fotos in material/ → Skript scratchpad/process-images.ps1 anpassen --></p>
+          <p class="eyebrow">Feedback</p>
+          <h2 id="feedback-h2">Was Gäste über uns sagen.</h2>
+          <p>Echte Stimmen von Menschen, für die wir gekocht haben.</p>
         </div>
-        <div class="g-grid reveal d1">
-          <figure class="g-item"><img src="assets/g-duo-spread.jpg" width="760" height="570" loading="lazy" decoding="async" alt="Laura und Lucie hinter einer üppig gedeckten Tafel voller Speisen"></figure>
-          <figure class="g-item"><img src="assets/g-gewuerze.jpg" width="928" height="1300" loading="lazy" decoding="async" alt="Sitzend mit einer Gewürzdose voller bunter Ayurveda-Gewürze auf einem Holzbrett"></figure>
-          <figure class="g-item"><img src="assets/g-kochen.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Die beiden beim Kochen in der offenen Holzküche"></figure>
-          <figure class="g-item"><img src="assets/g-aperitivo.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Liebevoll angerichteter Aperitivo-Teller mit Focaccia, Antipasti und frischen Broten auf einer Leinentafel"></figure>
-          <figure class="g-item"><img src="assets/g-tafel-namensschilder.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Kleine Ayurveda-Tafel mit Rote-Bete-Hummus, hausgemachtem Lassi und frischem Brot auf einem Holztisch, dazwischen handgeschriebene Namensschilder"></figure>
-          <figure class="g-item"><img src="assets/g-mezze.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Ayurvedische Mezze-Auswahl mit Hummus, Kürbis-Aufstrich, Tabouleh und Beilagen in bunten Schüsseln auf Holztisch"></figure>
-          <figure class="g-item"><img src="assets/g-buffet.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Ayurvedisches Buffet mit vielen bunten Schüsseln im warmen Abendlicht"></figure>
-          <figure class="g-item"><img src="assets/g-zucchini-teller.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Ayurvedischer Teller mit gefüllter Zucchini auf Süßkartoffelpüree, dazu Rote-Bete-Reis, Mango-Chutney und Dal auf türkisem Keramikteller – dahinter Frühlingsblumen im Holztopf"></figure>
-          <figure class="g-item"><img src="assets/g-ernte.jpg" width="975" height="1300" loading="lazy" decoding="async" alt="Ernte von frischem Gemüse und Kräutern im Gewächshaus für das Retreat-Menü"></figure>
-          <figure class="g-item"><img src="assets/g-duo-melone.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Laura und Lucie in ihrer pflanzenreichen Küche mit frischen Zutaten und Wassermelone"></figure>
-          <figure class="g-item"><img src="assets/g-tafel-hoch.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Reich gedeckte Tafel von oben, mit Laura und Lucie dahinter"></figure>
-          <figure class="g-item"><img src="assets/g-dampf.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Dampfende Schüssel beim Kochen, Basilikum im Vordergrund"></figure>
-          <figure class="g-item"><img src="assets/g-kuchen-duo.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Zwei selbstgemachte Kuchen von oben: eine Erdbeer-Sahne-Torte und ein Schokoladen-Gugelhupf mit Kornblumenblüten, von Laura und Lucie gehalten"></figure>
+        <div class="quotes">
+          <blockquote class="quote placeholder reveal d1">
+            <span class="mark" aria-hidden="true">„</span>
+            <p>[KLÄREN: echtes, freigegebenes Gäste-Zitat – z. B. zu Geschmack, Atmosphäre oder Ablauf.]</p>
+            <span class="who">Name · Anlass</span>
+          </blockquote>
+          <blockquote class="quote placeholder reveal d2">
+            <span class="mark" aria-hidden="true">„</span>
+            <p>[KLÄREN: echtes, freigegebenes Gäste-Zitat – gern von einem Retreat oder Fest.]</p>
+            <span class="who">Name · Anlass</span>
+          </blockquote>
+          <blockquote class="quote placeholder reveal d3">
+            <span class="mark" aria-hidden="true">„</span>
+            <p>[KLÄREN: echtes, freigegebenes Gäste-Zitat – ein Satz genügt.]</p>
+            <span class="who">Name · Anlass</span>
+          </blockquote>
         </div>
-      </div>
-    </section>
-
-    <!-- ============================ ABLAUF ============================ -->
-    <section id="ablauf" aria-labelledby="ablauf-h2">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <p class="eyebrow">So arbeiten wir</p>
-          <h2 id="ablauf-h2">In drei ruhigen Schritten zu eurem Menü.</h2>
-        </div>
-        <div class="steps-grid">
-          <div class="step reveal d1">
-            <h3>Kennenlernen</h3>
-            <p>Ihr erzählt uns von eurem Anlass, den Menschen und dem Rahmen. Wir hören zu.</p>
-            <span class="dur">Unverbindlich</span>
-          </div>
-          <div class="step reveal d2">
-            <h3>Menü entwerfen</h3>
-            <p>Wir stellen ein ayurvedisches Menü zusammen – abgestimmt auf Ort, Jahreszeit und Bedürfnisse.</p>
-            <span class="dur">Gemeinsam verfeinert</span>
-          </div>
-          <div class="step reveal d3">
-            <h3>Wir kochen</h3>
-            <p>Am Tag selbst kümmern wir uns um alles rund ums Essen. Ihr seid einfach da.</p>
-            <span class="dur">Achtsam begleitet</span>
-          </div>
-        </div>
+        <p style="text-align:center;color:var(--text-soft);font-size:var(--step--1);margin-top:var(--space-4)">Sobald ihr uns Stimmen mit Freigabe schickt, erscheinen hier echte Zitate – erfundene Bewertungen gibt es bei uns nicht.</p>
       </div>
     </section>
 
@@ -653,7 +703,7 @@
         <a href="#angebot">Angebot</a>
         <a href="#kueche">Unsere Küche</a>
         <a href="#ueber">Laura &amp; Lucie</a>
-        <a href="#galerie">Impressionen</a>
+        <a href="#feedback">Feedback</a>
         <a href="#kontakt">Anfragen</a>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
@@ -718,6 +768,41 @@
       msg.className = 'form-msg ok show';
       form.querySelector('button[type=submit]').textContent = 'Gesendet (Demo)';
     });
+
+    // Impressionen-Slider (transform-basiert; Pfeile + Touch-Wisch mit Snap)
+    var track = document.getElementById('slider-track');
+    if(track){
+      var viewport = track.parentElement; // .slider
+      var sPrev = document.getElementById('slider-prev');
+      var sNext = document.getElementById('slider-next');
+      var pos = 0;
+      var maxShift = function(){ return Math.max(0, track.scrollWidth - viewport.clientWidth); };
+      var stops = function(){ return Array.prototype.map.call(track.children, function(s){ return s.offsetLeft; }); };
+      var apply = function(){
+        pos = Math.max(0, Math.min(pos, maxShift()));
+        track.style.transform = 'translateX(-' + pos + 'px)';
+        sPrev.disabled = pos <= 1;
+        sNext.disabled = pos >= maxShift() - 1;
+      };
+      sNext.addEventListener('click', function(){
+        var m = maxShift(), s = stops(), nx = null;
+        for(var i=0;i<s.length;i++){ if(s[i] > pos + 2){ nx = s[i]; break; } }
+        pos = (nx === null ? m : Math.min(nx, m)); apply();
+      });
+      sPrev.addEventListener('click', function(){
+        var s = stops(), prev = 0;
+        for(var i=0;i<s.length;i++){ if(s[i] < pos - 2){ prev = s[i]; } }
+        pos = prev; apply();
+      });
+      var x0 = null, p0 = 0;
+      track.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; p0 = pos; track.style.transition = 'none'; }, {passive:true});
+      track.addEventListener('touchmove', function(e){ if(x0 === null) return; pos = p0 - (e.touches[0].clientX - x0); track.style.transform = 'translateX(-' + Math.max(0, Math.min(pos, maxShift())) + 'px)'; }, {passive:true});
+      track.addEventListener('touchend', function(){ x0 = null; track.style.transition = '';
+        var s = stops(), best = 0, bd = Infinity; for(var i=0;i<s.length;i++){ var d = Math.abs(s[i] - pos); if(d < bd){ bd = d; best = s[i]; } } pos = best; apply(); });
+      window.addEventListener('resize', apply);
+      window.addEventListener('load', apply);
+      apply();
+    }
   })();
   </script>
 </body>
