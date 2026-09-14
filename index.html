@@ -2,13 +2,16 @@
 <!--
   ╔══════════════════════════════════════════════════════════════════════╗
   ║  MADHU & MOON · Ayurvedische Retreat-Küche · Laura & Lucie             ║
-  ║  Design-System „Moos & Messing" (verbindlicher Handoff, Aug 2026).     ║
-  ║  Dunkel als Grundzustand (Tiefmoos) · Messing einziger Akzent · Creme  ║
-  ║  nur für Textseiten. Cormorant + Karla. Keine Radien, keine Schatten;  ║
-  ║  Tiefe über erhabene Flächen + 1-px-Linien. Single-File, kein Build.   ║
+  ║  Design-System „Moos & Messing" (verbindlicher Handoff, Aug 2026),     ║
+  ║  umgesetzt als HELLE Creme-Variante (html[data-theme=creme], Wunsch    ║
+  ║  31.08.: „hell mit dunkleren Akzenten"): Creme-Fläche, Moos-Text,      ║
+  ║  dunkler Moos-CTA, Messing nur als Detail. Cormorant + Karla. Keine    ║
+  ║  Radien, keine Schatten; Tiefe über erhabene Flächen + 1-px-Linien.    ║
+  ║  Single-File, kein Build. Slider/Karussell transform-basiert.          ║
   ╠══════════════════════════════════════════════════════════════════════╣
-  ║  ⚠ DEMO — noindex aktiv. Eigene Fotos (freigegeben). Bios & E-Mail     ║
-  ║    noch [KLÄREN]. Rechtsseiten = Platzhalter (Creme-Theme). HWG-neutral.║
+  ║  ⚠ DEMO — noindex aktiv. Eigene Fotos (freigegeben). Offen: Kurz-Bios  ║
+  ║    + echte E-Mail (s. _projekt/OFFENE-FRAGEN.md). Rechtsseiten =       ║
+  ║    Platzhalter. HWG-neutral.                                           ║
   ╚══════════════════════════════════════════════════════════════════════╝
 -->
 <html lang="de" data-theme="creme">
@@ -77,7 +80,11 @@
   /* Creme-Theme (Textseiten): hier nur als Klasse verfügbar, s. Rechtsseiten */
   [data-theme="creme"]{
     --tiefmoos:#EDEAE0; --erhoben:#E4E0D3; --messing:#9C824E;
-    --text:#4C5349; --text-2:#6B7268; --linie:#D8D5C7; --salbei:#7E8C7C;
+    --text:#4C5349; --text-2:#5D655C; --linie:#D8D5C7; --salbei:#5A665A;
+    /* AA auf Creme (Handoff-Regel: auf Creme dunkler): Sekundärtext #6B7268→#5D655C (5,0:1) und
+       Salbei-Labels #7E8C7C→#5A665A (5,0:1, auch auf erhoben ≥4,5). Messing #9C824E bleibt für ≥14px
+       (3,05:1, laut Handoff „ab 14px lesbar" — offene Kundenfrage). Für Kleintext/Hover/Meldung: */
+    --messing-text:#6B5F42; --messing-hover:#5E4B28;
   }
 
   /* ================================================================
@@ -142,6 +149,10 @@
   [data-theme="creme"] .btn-ghost:hover{background:#2C332C;color:#F2EFE6;border-color:#2C332C}
   [data-theme="creme"] ::selection{background:var(--messing);color:#F2EFE6}
   [data-theme="creme"] form .btn{color:#F2EFE6}
+  /* Hover war Messing-hell (1,2:1 auf Creme = unsichtbar) → dunkler; Formular-Meldung war ebenfalls Messing-hell */
+  [data-theme="creme"] a:hover{color:var(--messing-hover);border-bottom-color:var(--messing-hover)}
+  [data-theme="creme"] .privacy-line a{color:var(--messing-text)}
+  [data-theme="creme"] .form-msg{color:var(--text);border-color:var(--messing)}
 
   /* ================================================================
      4 · NAV
@@ -169,7 +180,7 @@
   .m-menu.open{opacity:1;visibility:visible}
   .m-menu a{font-family:var(--serif);font-weight:300;font-size:34px;color:var(--text);padding:.2em 0;border-bottom:1px solid var(--linie)}
   .m-menu a .amp{color:var(--messing)}
-  .m-menu .btn{margin-top:24px;justify-content:center;align-self:flex-start}
+  .m-menu .btn{margin-top:24px;justify-content:center;align-self:flex-start;font-family:var(--sans);font-weight:400;font-size:14px;letter-spacing:.12em;padding:15px 34px;border:0}
   .m-close{position:absolute;top:18px;right:var(--pad-x);background:none;border:0;cursor:pointer;color:var(--text);width:46px;height:46px}
   .m-close svg{width:28px;height:28px}
 
@@ -256,6 +267,7 @@
   .bios h3{font-weight:400;margin-bottom:4px}
   .bios .role{font-family:var(--serif);font-weight:500;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--salbei);display:block;margin-bottom:14px}
   .bios p{font-family:var(--sans);font-size:14.5px;line-height:1.65;color:var(--text-2)}
+  .bios .bios-note{grid-column:1/-1;font-family:var(--serif);font-size:var(--t-body);line-height:1.55;color:var(--text);max-width:48ch;margin-top:-8px}
   @media (max-width:680px){.bios{grid-template-columns:1fr;gap:28px}}
 
   /* ================================================================
@@ -307,8 +319,9 @@
   .footer .brand-t{font-family:var(--serif);font-weight:300;font-size:26px;letter-spacing:.03em;color:var(--text)}
   .footer .brand-t .amp{color:var(--messing)}
   .footer p{font-family:var(--sans);font-size:12.5px;line-height:1.7;color:var(--text-2);max-width:34ch;margin-top:12px}
-  .footer nav{display:grid;gap:8px}
-  .footer nav a{font-family:var(--sans);font-size:12.5px;letter-spacing:.06em;color:var(--text-2);border:0}
+  .footer nav{display:grid;gap:4px}
+  .footer nav a{font-family:var(--sans);font-size:12.5px;letter-spacing:.06em;color:var(--text-2);border:0;padding:4px 0}
+  @media (max-width:860px){.footer nav{gap:0}.footer nav a{min-height:44px;display:flex;align-items:center}}
   .footer nav a:hover{color:var(--messing)}
   .footer-bottom{border-top:1px solid var(--linie);margin-top:40px;padding-top:24px;
     display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-family:var(--sans);font-size:12px;color:var(--text-2)}
@@ -373,7 +386,7 @@
               <a href="#kontakt" class="btn">Anfragen
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
-              <a href="#angebot" class="btn-ghost">Unser Angebot</a>
+              <a href="#angebot" class="btn btn-ghost">Unser Angebot</a>
             </div>
           </div>
           <figure class="hero-figure reveal">
@@ -389,7 +402,7 @@
     <section class="ethos">
       <div class="wrap">
         <span class="label">Unser Leitgedanke</span>
-        <p class="quote">Kochen ist für uns ein Ritual – Nahrung, die nährt und verbindet.</p>
+        <p class="quote">Kochen ist für uns ein Ritual, eingebettet im ayurvedischen Wissen – Essen, das nährt und verbindet.</p>
       </div>
     </section>
 
@@ -398,8 +411,8 @@
       <div class="wrap">
         <div class="sec-head reveal">
           <span class="num">01 — Angebot</span>
-          <h2>Ayurvedische Küche, wo Menschen zusammenkommen</h2>
-          <p>Sagt uns, was ihr plant – wir stimmen ein Menü und den Ablauf darauf ab. Vegan, vegetarisch oder mit Fisch, ganz nach eurem Anlass.</p>
+          <h2>Unser Angebot für dich</h2>
+          <p>Wir kochen überall dort, wo Nahrung, Gesundheit und Genuss zelebriert werden. Sagt uns, was ihr plant – wir stimmen ein leckeres Menü und den Ablauf darauf ab.</p>
         </div>
         <div class="cards reveal">
           <article class="card">
@@ -416,7 +429,7 @@
             <div class="card-body">
               <span class="cat">Events</span>
               <h3>Feste &amp; Feiern</h3>
-              <p>Hochzeiten, Geburtstage, Firmenfeiern – von der stillen Tafel bis zum großen Menü, mit Sorgfalt angerichtet.</p>
+              <p>Feste, Feiern und besondere Anlässe – von der stillen Tafel bis zum großen Menü.</p>
               <div class="price"><span class="p">Auf Anfrage</span><span class="z">für eure Anlässe</span></div>
             </div>
           </article>
@@ -425,7 +438,7 @@
             <div class="card-body">
               <span class="cat">Workshops</span>
               <h3>Gemeinsam kochen</h3>
-              <p>Die Grundlagen der ayurvedischen Küche kennenlernen – ein sinnlicher, entschleunigter Nachmittag.</p>
+              <p>Die Grundlagen der ayurvedischen Küche kennenlernen – gemeinsam am Herd, sinnlich und entschleunigt.</p>
               <div class="price"><span class="p">Auf Anfrage</span><span class="z">miteinander · lernend</span></div>
             </div>
           </article>
@@ -491,17 +504,19 @@
         <figure class="about-photo reveal">
           <img src="assets/about-1000.jpg" srcset="assets/about-620.jpg 620w, assets/about-1000.jpg 1000w" sizes="(max-width:900px) 92vw, 1100px" width="1000" height="667" loading="lazy" decoding="async" alt="Laura und Lucie in ihrer Küche mit einem selbstgebackenen Kuchen">
         </figure>
+        <!-- OFFEN (bewusst kein Platzhaltertext auf der Seite): persönliche Kurz-Bios von Laura & Lucie fehlen noch —
+             je 2–3 Sätze (Weg zur ayurvedischen Küche, was sie daran lieben) → _projekt/OFFENE-FRAGEN.md #B.
+             Sobald sie da sind: pro Karte ein <p> unter die Rolle setzen und die .bios-note darunter entfernen. -->
         <div class="bios reveal">
           <div>
             <h3>Laura</h3>
             <span class="role">Ayurvedische Köchin</span>
-            <p>[KLÄREN: 2–3 persönliche Sätze zu Laura – Weg zur ayurvedischen Küche, was sie daran liebt.]</p>
           </div>
           <div>
             <h3>Lucie</h3>
             <span class="role">Ayurvedische Köchin</span>
-            <p>[KLÄREN: 2–3 persönliche Sätze zu Lucie – Weg zur ayurvedischen Küche, was sie daran liebt.]</p>
           </div>
+          <p class="bios-note">Wie wir beide zur ayurvedischen Küche gefunden haben, erzählen wir euch am liebsten persönlich – <a href="#kontakt">beim ersten Gespräch über euer Vorhaben</a>.</p>
         </div>
       </div>
     </section>
